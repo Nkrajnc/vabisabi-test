@@ -3,7 +3,28 @@
 A Playwright end-to-end (E2E) testing project for BTC City Estate property listings web application.
 
 ## Overview
-This project automates browser-based tests for the BTC City Estate platform, focusing on property listing features, filtering, navigation, and UI validation. It uses [Playwright](https://playwright.dev/) with TypeScript for robust, maintainable, and parallelizable test execution.
+This project contains a Playwright end-to-end (E2E) test suite for the BTC City Estate platform.
+
+The suite focuses on **critical user journeys**:
+- property discovery (listing)
+- filtering behavior
+- navigation to detail pages
+- basic edge cases and negative scenarios
+
+## Testing Approach
+
+The test suite follows a **risk-based approach**, prioritizing flows that deliver the most business value:
+
+- Property search and filtering (core user flows)
+- Property detail navigation
+- UI consistency between listing and detail views
+
+Edge cases are included where they provide meaningful coverage, such as:
+- restrictive filters returning empty states
+- navigation state (back button behavior)
+
+Lower-value areas such as visual polish and deep form validation are intentionally not covered in automation and are better suited for exploratory testing.
+
 
 ## Project Structure
 ```
@@ -47,18 +68,25 @@ This project automates browser-based tests for the BTC City Estate platform, foc
 ### Running Tests
 - Run all tests in headless mode:
   ```sh
+  npx playwright test
   npm test
+
   ```
 - Run tests in headed (UI) mode:
   ```sh
+  npx playwright test --headed
   npm run test:headed
+
   ```
 - Open Playwright's interactive UI:
   ```sh
+  npx playwright test --ui
   npm run test:ui
+
   ```
 - View the latest HTML report:
   ```sh
+  npx playwright show-report
   npm run report
   ```
 
