@@ -1,0 +1,21 @@
+# Node
+node_modules/
+
+# Playwright
+playwright-report/
+test-results/
+
+# Env
+.env
+
+# Logs
+*.log
+
+# Build
+/dist/
+
+# OS
+.DS_Store
+
+# VSCode
+.vscode/
